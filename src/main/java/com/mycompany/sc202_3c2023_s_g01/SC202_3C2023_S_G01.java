@@ -1,69 +1,41 @@
-//Integrantes:
-//Lesly_Otavalo
-//Erick_Benavides
-//Hernán_Lu
-//Jin_Lin
-
 package com.mycompany.sc202_3c2023_s_g01;
 import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 public class SC202_3C2023_S_G01 {
     
     public static void main(String[] args) {
 
-//Nombre de los barberos.
-        String Barbero1, Barbero2, Barbero3, Barbero4, Barbero5;
-        int BarberoSalario1 , BarberoSalario2, BarberoSalario3, BarberoSalario4, BarberoSalario5;
-
 //funciones de la barberia.
         String NombreCompleto;
         String citas;
         String opcion;
- 
 
 
-// Menu principal
-while (true) {
-opcion = JOptionPane.showInputDialog("Digite una opción:\n"
-        + "1. Agregar cita\n"
-            + "2. Información de citas\n"
-                 + "3. Salir\n");
+        int salario =  2500;
+        int salario2 =  3000;
+        int MontoTotal =  salario * 13;
 
-switch (opcion) {
-
-case "1":
-    // Aquí puedes agregar la lógica para buscar un barbero
-    break;
-    
-case "2":
-    // Aquí puedes agregar la lógica para buscar información de cita
-     break;
-                            
-case "3":System.exit(0); // Termina el programa directamente
-break;
-               
-default:JOptionPane.showMessageDialog(null, "Opción inválida");
-break;    
-     
-                        }
-// Menú de tipos de servicio por resulver 
+citas = NombreCompleto;
 
 while (true) {
-    citas = JOptionPane.showInputDialog("Digite el tipo de servicio que desea:\n"
+    opcion = JOptionPane.showInputDialog("Digite el tipo de servicio que desea:\n"
         + "1. Tinte\n" 
             + "2. Corte con barba\n" 
                 + "3. Servicio completo\n" 
                     + "4. Precio de servicio\n"
                         + "5. Salir\n");
 
-citas = JOptionPane.showInputDialog("Digite su nombre para guarda la cita:");    
-
                           
 // Aquí puedes agregar la lógica para gestionar la cita según la opción seleccionada
 
-switch (citas) {
+switch (opcion) {
     case "1":
-        break;
+        JOptionPane.showMessageDialog(null, "Bienvenido a nuestro menú de citas.");
+            NombreCompleto = JOptionPane.showInputDialog("Digite su nombre para guarda la cita:");    
+            citas JOptionPane.showMessageDialog(null, "Usted fue guardado con Éxito" );
+
+            break;
     
     case "2":
         // Lógica para el servicio de corte con barba
@@ -75,6 +47,7 @@ switch (citas) {
 
     case "4":
         // Lógica para consultar el precio del servicio
+        JOptionPane.showMessageDialog(null,"Su Monto total es el siguiente :" + "\n" + MontoTotal);
             break;
 
     case "5":
@@ -86,8 +59,7 @@ switch (citas) {
     break;
 
    
-                }   
-            }
+            }   
         }
     }
 }
