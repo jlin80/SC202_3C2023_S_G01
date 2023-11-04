@@ -5,16 +5,14 @@ public class Cita {
     private String dia;
     private int horaInicio;
     private int horaFin;
-    private Barbero barberoAsignado;
     private double precioPorHora;
 
-    public Cita(String nombreCliente, String numTelCliente, String dia, int horaInicio, int horaFin, Barbero barberoAsignado, double precioPorHora) {
+    public Cita(String nombreCliente, String numTelCliente, String dia, int horaInicio, int horaFin, double precioPorHora) {
         this.nombreCliente = nombreCliente;
         this.numTelCliente = numTelCliente;
         this.dia = dia;
         this.horaInicio = horaInicio;
         this.horaFin = horaFin;
-        this.barberoAsignado = barberoAsignado;
         this.precioPorHora = precioPorHora;
     }
 
@@ -57,15 +55,6 @@ public class Cita {
     public void setHoraFin(int HoraFin) {
         this.horaFin = HoraFin;
     }
-
-    public Barbero getBarberoAsignado() {
-        return barberoAsignado;
-    }
-
-    public void setBarberoAsignado(Barbero barberoAsignado) {
-        this.barberoAsignado = barberoAsignado;
-    }
-
     public double getPrecioPorHora() {
         return precioPorHora;
     }

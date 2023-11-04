@@ -10,25 +10,13 @@ package com.mycompany.sc202_3c2023_s_g01;
  */
 public class Factura {
     
-    private Cliente cliente;
     private Cita citaAsociada;
     private double totalFactura;
 
-    public Factura(Cliente cliente, Cita citaAsociada, double totalFactura) {
-        this.cliente = cliente;
+    public Factura( Cita citaAsociada, double totalFactura) {
         this.citaAsociada = citaAsociada;
         this.totalFactura = totalFactura;
     }
-
-    // Getters y Setters
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
     public Cita getCitaAsociada() {
         return citaAsociada;
     }
