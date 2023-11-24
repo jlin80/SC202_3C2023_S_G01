@@ -174,7 +174,7 @@ public class Barbero {
         mensaje += "\n";
     }
 
-    JOptionPane.showMessageDialog(null, mensaje, "Datos de los barberos", JOptionPane.INFORMATION_MESSAGE);
+    JOptionPane.showMessageDialog(null, mensaje, "Datos de los barberos");
     }
 }
 
