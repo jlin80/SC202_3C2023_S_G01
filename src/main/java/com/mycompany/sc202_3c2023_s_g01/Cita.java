@@ -7,44 +7,46 @@ public class Cita {
     public int dia;
     public int duracion;
     public Barbero barbero; //clase barbero
-    public enum entreSemana{
-        Lunes, Martes, Miercoles, Jueves, Viernes
-    }
-    
-    public enum finDeSemana{
-        Sabado, Domingo
-    }
+    public TipoServicio tipoServicio; // clase TipoServicio
     
     Cita citas[] = new Cita[1]; //arreglo de citas
     
-    public void Cita(String nombreCliente, String numTelCliente, int dia, int duracion, Barbero barbero) {
+    public void Cita(String nombreCliente, String numTelCliente, int dia, int duracion, Barberos barbero) {
         this.nombreCliente = nombreCliente;
         this.numTelCliente = numTelCliente;
         this.dia = dia;
         this.duracion = duracion;
         this.barbero = barbero;
+        this.tipoServicio = tipoServicio;
     }
     
     public void bienvenida() { //solicitar datos al cliente para añadir cita
         nombreCliente = JOptionPane.showInputDialog("Ingrese su nombre: ");
         numTelCliente = JOptionPane.showInputDialog("Ingrese su número teléfono: ");
-        dia = Integer.parseInt(JOptionPane.showInputDialog("\n1.Lunes \n2.Martes \n3.Miércoles \n4.Jueves \n5.Viernes \nIngrese el día de la cita: "));
+        dia = Integer.parseInt(JOptionPane.showInputDialog("\n1. Lunes \n2. Martes \n3. Miércoles \n4. Jueves \n5. Viernes \n6. Sábado \n7. Domingo \nIngrese el día de la cita: "));
+        
         Factura factura = new Factura();
         if (dia <= 5) {
             JOptionPane.showMessageDialog(null, "Ha elegido un día entre semana, el cobro del servicio es de: "+factura.precio);
         } else {
             JOptionPane.showMessageDialog(null, "Ha elegido un día del fin de semana, el cobro del servicio es de: "+factura.precioFin);
         }          
+        
         duracion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la duración de la cita en horas: "));
-        Barbero barberoDisponible = null;
-        for (int i = 0; i < barberos.length; i++) { // recorre el arreglo de barberos
+        Barbero barbero = new Barbero();
+        
+        Barberos barberoDisponible = null;
+        for (int i = 0; i < barbero.length; i++) { // recorre el arreglo de barberos
             if (duracion != barbero.horaAlmuerzo) { // si no lo contiene, lo llena
-                Barbero barbero = barberos[i];
+                Barbero barbero = barbero.barberos[i];
                 barberoDisponible = barbero;
                 JOptionPane.showMessageDialog(null, "La cita fue agendada con éxito.\nBarbero: "+barberoDisponible.nombre);
                 break;
             }
         }
+        
+        TipoServicio tipoServicio = new TipoServicio(); // instancia del servicio
+        tipoServicio.seleccion();  
     }
     
     public void eliminarCita(String nombreCliente, int dia){
@@ -64,3 +66,18 @@ public class Cita {
         }
     }
 }
+    public void Cita(String nombreCliente, String numTelCliente, int dia, int duracion, Barberos barbero) {
+        this.nombreCliente = nombreCliente;
+        this.numTelCliente = numTelCliente;
+        this.dia = dia;
+        this.duracion = duracion;
+        this.barbero = barbero;
+        this.tipoServicio = tipoServicio;
+    }
+    
+    public void bienvenida() { //solicitar datos al cliente para añadir cita
+        nombreCliente = JOptionPane.showInputDialog("Ingrese su nombre: ");
+        numTelCliente = JOptionPane.showInputDialog("Ingrese su número teléfono: ");
+        dia = Integer.parseInt(JOptionPane.showInputDialog("\n1. Lunes \n2. Martes \n3. Miércoles \n4. Jueves \n5. Viernes \n6. Sábado \n7. Domingo \nIngrese el día de la cita: "));
+        
+  
