@@ -5,68 +5,49 @@ public class SC202_3C2023_S_G01 {
     
     public static void main(String[] args) {
 
-//funciones de la barberia.
+ // Crear objetos necesarios
+        Barbero barbero = new Barbero();
+        Cita cita = new Cita();
+        Factura factura = new Factura();
 
-        String NombreCompleto;
-        String citas;
+        while (true) {
+            // Mostrar menú de opciones
+            String opcion = JOptionPane.showInputDialog(
+                    "1. Factura\n" +
+                    "2. Cita\n" +
+                    "3. Barbero\n" +
+                    "4. Datos del Barbero\n" +
+                    "5. Salir"
+            );
 
-// Opcion de menu.
-
-        String opcion;
-
-// salario de los servicios.
-
-        int salario =  2500;
-        int salario2 =  3000;
-
-// iva funcion del 13 por ciento.
-
-        int MontonTotal =  salario * 13;
-
-
-
-while (true) {
-    opcion = JOptionPane.showInputDialog("Digite el tipo de servicio que desea:\n"
-        + "1. Tinte\n" 
-            + "2. Corte con barba\n" 
-                + "3. Servicio completo\n" 
-                    + "4. Precio de servicio\n"
-                        + "5. Salir\n");
-
-
-// Aquí puedes agregar la lógica para gestionar la cita según la opción seleccionada
-
-switch (opcion) {
-    case "1":
-        JOptionPane.showMessageDialog(null, "Bienvenido a nuestro menú de citas.");
-            NombreCompleto = JOptionPane.showInputDialog("Digite su nombre para guarda la cita:" );
-                JOptionPane.showMessageDialog(null, "Usted fue guardado con Éxito" );
-
+            // Procesar la opción seleccionada
+            switch (opcion) {
+                case "1":
+              
+                    factura.muestraFactura(0, 0, opcion, opcion);
                     break;
+                case "2":
 
-    case "2":
-        // Lógica para el servicio de corte con barba
-            break;
-
-    case "3":
-        // Lógica para el servicio completo
-            break;
-
-    case "4":
-        // Lógica para consultar el precio del servicio
-        JOptionPane.showMessageDialog(null,"Su Monto total es el siguiente :" + "\n" + 
-        MontonTotal);
-            break;
-
-    case "5":
-        JOptionPane.showMessageDialog(null, "Saliendo del sistema");
-            System.exit(0);
-
-    default:
-        JOptionPane.showMessageDialog(null, "Opción inválida. Digite una opción válida.");
-    break;
-
-
+                    cita.bienvenida();
+                    cita.Cita(opcion, opcion, 0, 0, barbero);
+                    cita.eliminarCita(opcion, 0);
+                    break;
+                case "3":
+            
+                    barbero.InsertarBarberos();
+                    break;
+                case "4":
+           
+                    barbero.mostrarDatosBarberos();
+                    break;
+                case "5":
+               
+                    JOptionPane.showMessageDialog(null, "¡Hasta luego!");
+                    return;
+                default:
+           
+                    JOptionPane.showMessageDialog(null, "Opción no válida. Inténtalo de nuevo.");
+                    break;
             }
         }
     }
