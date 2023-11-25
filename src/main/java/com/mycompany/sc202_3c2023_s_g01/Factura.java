@@ -9,23 +9,22 @@ public class Factura {
     public double totalFinde =0;
     public String fecha="";
     
-    
-    
-    public void muestraFactura (int dia,int duracion,String nombreCliente, String numTelCliente){
+
+    public void muestraFactura (int dia,int duracion,String nombreCliente, String numTelCliente, TipoServicio tipoServicio){
     
     if (dia <=5) {
         fecha = JOptionPane.showInputDialog(null,"indigue la fecha de la factura");
         totalEntre =((precio * duracion)*0.13); 
         JOptionPane.showMessageDialog(null, "***FACTURA***\n FECHA: "+fecha+ "\nNOMBRE DE CLIENTE  : "+ nombreCliente +"\n tTELÉFONO :"+numTelCliente+"DÍA :"+dia
-        + "TIPO DE TRABAJO :(hay que hacer una lista de por lo menos 5 tipos de trabajos que despues de le da equivalencia a duración para colocar esta parte) "+
-                "TOTAL CON IVA INCLUIDO: " + totalEntre );
+        + "TIPO DE TRABAJO : "+tipoServicio
+               + "TOTAL CON IVA INCLUIDO: " + totalEntre );
   } else 
     {
        totalFinde = ((precioFin * duracion)*0.13);
        fecha = JOptionPane.showInputDialog(null,"indigue la fecha de la factura");
        
       JOptionPane.showMessageDialog(null, "***FACTURA***\n FECHA: "+fecha+ "\nNOMBRE DE CLIENTE  : "+ nombreCliente +"\n tTELÉFONO :"+numTelCliente+"DÍA :"+ dia
-              +"TIPO DE TRABAJO :(hay que hacer una lista de por lo menos 5 tipos de trabajos que despues de le da equivalencia a duración para colocar esta parte)"
+              +"TIPO DE TRABAJO : "+tipoServicio
                 + "TOTAL CON IVA INCLUIDO: " + totalFinde );
         }
     }
